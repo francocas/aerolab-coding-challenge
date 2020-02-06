@@ -1,0 +1,72 @@
+.mainDivFilters{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    padding-left: 29px;
+    border-bottom: solid #a3a3a3 1px;
+    padding-bottom: 30px;
+}
+
+.selectedButton {
+    background:#0ad4fa;
+    border-radius:100px;
+    border: none;
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:white;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    border: none;
+    width: 172px;
+    height: 48px;
+    text-align: center;
+    margin-right: 24px;
+}
+
+.button{
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#a3a3a3;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    border-radius:100px;
+    border: none;
+    width: 172px;
+    height: 48px;
+    text-align: center;
+    margin-right: 24px;
+}
+
+.sortBy{
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#a3a3a3;
+    letter-spacing:-0.75px;
+    line-height:48px;
+    text-align:left;
+    width:77px;
+    min-width: 77px;
+    height: 48px;
+    margin-right: 24px;
+}
+
+.countOfItems{
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#616161;
+    letter-spacing:-0.75px;
+    line-height:48px;
+    text-align:left;
+    width: 170px;
+    height: 48px;
+}
+
+.vr{
+    background-color: #a3a3a3;
+    width: 2px;
+    height: 48px;
+    margin-left: 24px;
+    margin-right: 25px;
+}

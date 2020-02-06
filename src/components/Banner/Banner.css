@@ -1,0 +1,21 @@
+.banner{
+    width: 1440px;
+    height: 412px;
+    margin-bottom: 68px;
+}
+
+.title{
+    position: absolute;
+    font-family:SourceSansPro-Bold;
+    font-size:64px;
+    color:#ffffff;
+    text-align:left;
+    width: 314px;
+    height: 80px;
+    font-weight: bold;
+    margin: 285px 133px;
+}
+
+.bannerDiv{
+    display: flex;
+}

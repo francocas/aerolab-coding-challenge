@@ -1,0 +1,87 @@
+.coinDivCard{
+    height: 48px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    padding: 12px;
+    opacity: 0.8;
+  }
+ .coinDivCard span {
+    margin-right: 4px;
+  }
+
+  .coinDivCard div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .coinImgCard {
+    padding-top: 6px;
+    width: 26px;
+    height: 26px;
+    align-self: center;
+  }
+
+  .coinDivHeader{
+    display: flex;
+    flex-direction: row-reverse;
+    height: 48px;
+    width: 103px;
+    background-color: #ededed;
+    border-radius: 100px;
+    align-items: center;
+    color:black;
+    font-size: 24px;
+    padding-bottom: 3px;
+    align-self: center;
+  }
+
+  .coinDivHeader span {
+    margin-right: 4px;
+    order: 1;
+  }
+
+  .coinDivHeader div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    order: 0;
+    margin-right: 4px;
+  }
+
+  .productCardInsuficientCoin{
+    display: flex;
+    position: absolute;
+    order: 1;
+    opacity:0.8;
+    background:#616161;
+    border-radius:100px;
+    width:142px;
+    height:42px;
+    flex-direction: row-reverse;
+    align-items: center;
+    color:black;
+    align-self: center;
+    right: 12px;
+  }
+  .productCardInsuficientCoin div{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    order: 0;
+    margin-right: 4px;
+  }
+
+  .productCardInsuficientCoin span {
+    margin-right: 4px;
+    order: 1;
+    color: white;
+    letter-spacing: -1px;
+  }

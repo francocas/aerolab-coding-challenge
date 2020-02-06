@@ -1,0 +1,27 @@
+.mainDiv{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    justify-content: flex-end;
+    max-width: 1440px;
+    width: 1440px;
+}
+
+.name{
+    font-size: 24px;
+    font-family:SourceSansPro-Regular;
+    font-size:24px;
+    color:#616161;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    margin-right: 18px;
+    align-self: center;
+    margin-left: 1070px;
+}
+
+.aeroIcon{
+    width: 39px;
+    height: 36px;
+    align-self: center;
+}

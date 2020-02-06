@@ -1,0 +1,131 @@
+.buyButton{
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    order: 1;
+    right: 12px;
+}
+
+.imagesDiv{
+    width: 252;
+    height: 156;
+    flex-direction: row;
+}
+
+.imageStyle{
+    width: 175px;
+    height: 142px;
+    order: 0;
+    
+}
+
+.category{
+    color: lightgray;
+    font-size: 16px;
+}
+
+.productName{
+    font-size: 18px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 276px;
+    height: 276px;
+    position: relative;
+    align-content: center;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.redeemButton{
+    cursor: pointer;
+    width: 228px;
+    height: 36px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    border-radius: 24px;
+    padding: 8px 0px;
+    margin-top: 12px;
+    border: none;
+    color: #616161;
+    font-size: 18px;
+    margin: 12px;
+    max-height: 36px;
+}
+
+.dimmed {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 276px;
+    width: 276px;
+    position: absolute;
+    margin-top: -12px;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(10, 212, 250, 0.86),
+      rgba(37, 187, 241, 0.86)
+    );
+    z-index: 1;
+    padding: 12px;
+    display: flex;
+    align-content: center;
+    transition-duration: 1s;
+  }
+
+.dimmedHidden{
+    display: none;
+}
+
+.container{
+    background-color: white;
+    min-width: 276px;
+    min-height: 276px;
+    max-width: 276px;
+    max-height: 276px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-self: flex-end;
+    padding: 12px;
+    margin: 20px;
+}
+.container:hover {
+    transition: all 0.4s ease;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12), 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom:12px;
+  }
+
+  .coinDiv{
+    height: 48px;
+    margin-left: 16px;
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    padding: 12px;
+    opacity: 0.8;
+  }
+ .coinDiv span {
+    margin-right: 4px;
+  }
+
+  .coinDiv div {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  .coinImg {
+    padding-top: 6px;
+    width: 30px;
+    height: 30px;
+    align-self: center;
+  }
