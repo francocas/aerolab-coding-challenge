@@ -60,9 +60,7 @@ const App: React.FC = () => {
   }, [])
 
   const redeemProduct = (productId: any) => {
-    let payload = { productId: productId };
-    let body: FormData = new FormData();
-    body.append('json', JSON.stringify(payload));
+    let payload = {productId:productId};
     fetch('https://coding-challenge-api.aerolab.co/redeem', {
       method: 'POST',
       headers: {
