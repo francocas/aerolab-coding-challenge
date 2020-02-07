@@ -5,6 +5,13 @@ import Product from './models/Product';
 import { ShopHeader } from './components/ShopHeader/ShopHeader';
 import { Banner } from './components/Banner/Banner';
 import { FilterControls } from './components/FilterControls/FilterControls';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
+import { makeStyles } from '@material-ui/core/styles';
+
+function Alert(props:any) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTMzNjU1NmFhYjMyMjAwNmZhZWU3ZDciLCJpYXQiOjE1ODA0MjY1ODJ9.tFCUr-a-INlbL1UlnL5i5f6r9LC_9EtAtIUTKfPqU6w';
 
@@ -16,9 +23,10 @@ const App: React.FC = () => {
     __v: 0,
     redeemHistory: [],
     createDate: '2020-01-30T23:23:02.925Z'
-  })
-  const [products, setProducts] = React.useState<Product[]>([]);
-  React.useEffect(() => {
+  });
+  const [open, setOpen] = React.useState(false);
+
+  const getUser = () => {
     fetch('https://private-anon-41dc3689ae-aerolabchallenge.apiary-proxy.com/user/me', {
       headers: {
         type: 'application/json',
@@ -30,6 +38,12 @@ const App: React.FC = () => {
         setUser(data);
       })
     });
+  }
+
+  const [products, setProducts] = React.useState<Product[]>([]);
+  React.useEffect(() => {
+
+    getUser();
 
     fetch('https://coding-challenge-api.aerolab.co/products', {
       headers: {
@@ -46,8 +60,8 @@ const App: React.FC = () => {
   }, [])
 
   const redeemProduct = (productId: any) => {
-    let payload = {productId:productId};
-    let body:FormData = new FormData();
+    let payload = { productId: productId };
+    let body: FormData = new FormData();
     body.append('json', JSON.stringify(payload));
     fetch('https://coding-challenge-api.aerolab.co/redeem', {
       method: 'POST',
@@ -59,21 +73,22 @@ const App: React.FC = () => {
       body: JSON.stringify(payload)
     }).then((response) => {
       response.json().then((data: any) => {
-        console.log(data);
-        fetch('https://private-anon-41dc3689ae-aerolabchallenge.apiary-proxy.com/user/me', {
-          headers: {
-            type: 'application/json',
-            accept: 'application/json',
-            authorization: token,
-          }
-        }).then((response) => {
-          response.json().then((data: any) => {
-            setUser(data);
-          })
-        });
-      })
+        if(response.ok){
+          setOpen(true);
+        }
+        getUser()
+      });
     });
   }
+
+
+  const handleClose = (event:any, reason:any) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const sort = (criteria: string) => {
     let orderedArray = []
@@ -104,6 +119,13 @@ const App: React.FC = () => {
       <Banner></Banner>
       <FilterControls orderOnClick={sort} productCuantity={products.length.toString()}></FilterControls>
       <div className='cardsContainer'>{renderCards()}</div>
+      <div>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            Product Redeemed successfully
+          </Alert>
+        </Snackbar>
+      </div>
     </>
   );
 
